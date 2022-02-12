@@ -11,6 +11,8 @@ deepam.odhisha@gmail.com (personal)
 
 
 After looking at the backend code of Arduino's inbuilt `tone()` wriiten by [Brett Hagman (Tone.cpp)](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/Tone.cpp), I realized that the `tone()` function was making use of CTC mode of the 8-Bit timer2 available on Arduino. The TOP count value for timer2 gets stored in the OCR2A register and the optimal prescaler value is stored in the TCCR2B's clock select bits (last 3 bits). According to the ATmega328P datasheet  
+<img src="https://render.githubusercontent.com/render/math?math=F_w = \frac{F_{cpu}}{2N(C+1)}">
+$$F_w = \frac{F_{cpu}}{2N(C+1)}$$  
 $$F_w = \frac{F_{cpu}}{2N(C+1)}$$  
 where $$F_w = frequency\: of\: ouput\: waveform $$  
 $$F_{cpu} = frequency\: of\: CPU $$
